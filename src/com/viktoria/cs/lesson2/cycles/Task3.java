@@ -22,6 +22,7 @@ public class Task3 {
     private static final int NEEDS = 300;
     public static final int CONVENT = 12;
 
+
     //ПОСТОЯННЫЕ ВЕЛИЧИНЫ ВЫНЕСТИ В КОНСТАНТЫ
     public static void main(String[] args) {
 
