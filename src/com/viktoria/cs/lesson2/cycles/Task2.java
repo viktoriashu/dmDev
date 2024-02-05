@@ -14,19 +14,11 @@ public class Task2 {
         System.out.println(reverse(value));
     }
 
-    //оно некрасивое, но работает
     private static int reverse(int value) {
-        double tensMultiplication = 1;
-        double tensDivision = 0.1;
-        int currentValue = 0;
-        double sumValue = 0;
-        for (int i = 0; value != 0; i++) {
-            currentValue = value % 10;
-            value = value / 10;
-            sumValue = sumValue + currentValue * tensMultiplication;
-            tensMultiplication = tensMultiplication / 10;
-            tensDivision = tensDivision * 10;
+        int reversNum = 0;
+        for (int currentValue = value; currentValue != 0; currentValue /= 10) {
+            reversNum = reversNum * 10 + currentValue % 10;
         }
-        return (int) (sumValue * tensDivision);
+        return reversNum;
     }
 }
