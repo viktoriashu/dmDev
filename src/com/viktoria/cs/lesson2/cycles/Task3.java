@@ -23,7 +23,6 @@ public class Task3 {
     public static final int CONVENT = 12;
 
 
-    //ПОСТОЯННЫЕ ВЕЛИЧИНЫ ВЫНЕСТИ В КОНСТАНТЫ
     public static void main(String[] args) {
 
         int pay = 600;  //зп
@@ -39,15 +38,13 @@ public class Task3 {
     }
 
     private static int conventMonth(int year, int month) {
-        int months = (year * CONVENT) + month;
-        return months;
+        return (year * CONVENT) + month;
     }
 
     private static int bankAccount(int months, int pay, int needs, int salaryIncrease) {
         int sumPay = sumPay(pay, months, salaryIncrease);
         int sumNeeds = sumNeeds(needs, months);
-        int bankAccount = sumPay - sumNeeds;
-        return bankAccount;
+        return sumPay - sumNeeds;
     }
 
     //Это все заработанные денежки
@@ -75,17 +72,17 @@ public class Task3 {
 
     private static double brokerageAccount(int pay, int months, int salaryIncrease, double broker, double shares) {
         double brokeragePay = 0;
-        double brokeragePay2 = 0;
+        double stockReturn = 0;
         for (int i = 2; i <= months; i++) {
             if (i % 6 == 0) {
                 brokeragePay = pay * broker;
                 pay = pay + salaryIncrease;
-                brokeragePay2 = (brokeragePay2 + brokeragePay) * shares;
+                stockReturn = (stockReturn + brokeragePay) * shares;
             } else {
                 brokeragePay = pay * broker;
-                brokeragePay2 = (brokeragePay2 + brokeragePay) * shares;
+                stockReturn = (stockReturn + brokeragePay) * shares;
             }
         }
-        return Math.round(brokeragePay2 * 100) / 100.0;
+        return Math.round(stockReturn * 100) / 100.0;
     }
 }
