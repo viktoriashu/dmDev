@@ -24,8 +24,8 @@ public class Task1 {
     //определение размера нового массива
     private static int arraySize(int[] values) {
         int count = 0;
-        for (int i = 0; i < values.length; i++) {
-            if (values[i] >= 0) {
+        for (int value : values) {
+            if (value >= 0) {
                 count++;
             }
         }
@@ -35,9 +35,9 @@ public class Task1 {
     //заполнение нового массива
     private static int[] fillArray(int[] values, int[] valuesNotNegative) {
         int valuesNotNegativeIndex = 0;
-        for (int i = 0; i < values.length; i++) {
-            if (0 < values[i]) {
-                valuesNotNegative[valuesNotNegativeIndex] = values[i];
+        for (int value : values) {
+            if (0 < value) {
+                valuesNotNegative[valuesNotNegativeIndex] = value;
                 valuesNotNegativeIndex++;
             }
         }
@@ -52,7 +52,7 @@ public class Task1 {
         return valuesNotNegative;
     }
 
-    //Вывод кажого элемента нового массива
+    //Вывод каждого элемента нового массива
     private static void printArray(int[] valuesNotNegative) {
         for (int i : valuesNotNegative) {
             System.out.print(i + " ");
