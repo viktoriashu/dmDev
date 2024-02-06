@@ -1,4 +1,4 @@
-package com.viktoria.cs.lesson2.cycles;
+package com.viktoria.cs.lesson2.arrays;
 
 /**
  * Дан одномерный массив символов.
@@ -14,16 +14,18 @@ public class Task2 {
         char[] arrayChar = {'a', '6', 'y', 'P', 'T', 'q', '9', '+'};
         int[] arrayInt = arrayInt(arrayChar);
 
-        printArray(arrayInt);
+        int arithmeticMean = arithmeticMean(arrayInt);
+        printArray(arrayInt, arithmeticMean);
     }
 
     //Преобразовние в одномерный массив чисел
     private static int[] arrayInt(char[] arrayChar) {
         int[] arrayInt = new int[arrayChar.length];
         int arrayIntIndex = 0;
-        for (int i = 0; i < arrayChar.length; i++) {
-            arrayInt[arrayIntIndex] = arrayChar[i];
+        for (char symbol : arrayChar) {
+            arrayInt[arrayIntIndex] = symbol;
             arrayIntIndex++;
+
         }
         return arrayInt;
     }
@@ -31,18 +33,21 @@ public class Task2 {
     //Определение среднего арифметического
     private static int arithmeticMean(int[] arrayInt) {
         int arithmeticMean = 0;
-        for (int i = 0; i < arrayInt.length; i++) {
-            arithmeticMean = arithmeticMean + arrayInt[i];
+        for (int value : arrayInt) {
+            arithmeticMean = arithmeticMean + value;
+
         }
         return arithmeticMean / arrayInt.length;
     }
 
     //Вывод кажого элемента нового массива
-    private static void printArray(int[] arrayInt) {
-        for (int i = 0; i < arrayInt.length; i++) {
-            if (arrayInt[i] > arithmeticMean(arrayInt)) {
-                System.out.print(arrayInt[i] + " ");
+    private static void printArray(int[] arrayInt, int arithmeticMean) {
+
+        for (int value : arrayInt) {
+            if(value > arithmeticMean){
+                System.out.print(value + " ");
             }
+
         }
     }
 }
