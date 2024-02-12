@@ -12,7 +12,7 @@ import java.util.Locale;
  */
 public class Task1 {
     public static void main(String[] args) {
-        String valueStart = "abc Cpddd Dio OsfWw";
+        String valueStart = "abc CpdCdd Dio OsfWwz";
 
         String value = valueStart;
         value = editString(value);
@@ -30,12 +30,12 @@ public class Task1 {
     //метод заменяет дубли на пробелы и выводит результат в отредактированном виде (без пробелов и в верхнем регистре)
     private static String removeDuplicates(String value) {
         char[] valueArray = value.toCharArray();
-        for (int i = 0; i < valueArray.length; i++) {
-            for (int j = i + 1; j < valueArray.length; j++) {
+        int j = 1;
+        for (int i = 0; i < valueArray.length-1; i++) {
                 if (valueArray[i] == valueArray[j]) {
-                    valueArray[j] = ' ';
+                    valueArray[i] = ' ';
                 }
-            }
+            j++;
         }
         value = new String(valueArray);
         return editString(value);

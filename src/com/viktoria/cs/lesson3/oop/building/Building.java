@@ -5,29 +5,9 @@ import java.util.Objects;
 
 public class Building {
 
-    private int buildingNumber;
+    private final int buildingNumber;
 
-    private Floor[] floors;
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Building building = (Building) o;
-        return buildingNumber == building.buildingNumber && Arrays.equals(floors, building.floors);
-    }
-
-    @Override
-    public int hashCode() {
-        int result = Objects.hash(buildingNumber);
-        result = 31 * result + Arrays.hashCode(floors);
-        return result;
-    }
-
-    @Override
-    public String toString() {
-        return "Дом " + buildingNumber + " количество этажей в доме: " + Arrays.toString(floors);
-    }
+    private final Floor[] floors;
 
 
     public Building(int buildingNumber, Floor[] floors) {
@@ -41,5 +21,25 @@ public class Building {
 
     public Floor[] getFloors() {
         return floors;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(buildingNumber);
+        result = 31 * result + Arrays.hashCode(floors);
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Building building = (Building) o;
+        return buildingNumber == building.buildingNumber && Arrays.equals(floors, building.floors);
+    }
+
+    @Override
+    public String toString() {
+        return "Дом " + buildingNumber + " количество этажей в доме: " + Arrays.toString(floors);
     }
 }

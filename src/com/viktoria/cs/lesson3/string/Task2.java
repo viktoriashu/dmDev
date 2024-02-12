@@ -18,16 +18,16 @@ package com.viktoria.cs.lesson3.string;
 
 public class Task2 {
 
-    public static final char ZERO = '0';
-    public static final char ONE = '1';
-    public static final char TWO = '2';
-    public static final char THREE = '3';
-    public static final char FOUR = '4';
-    public static final char FIVE = '5';
-    public static final char SIX = '6';
-    public static final char SEVEN = '7';
-    public static final char EIGHT = '8';
-    public static final char NINE = '9';
+    private static final char ZERO = '0';
+    private static final char ONE = '1';
+    private static final char TWO = '2';
+    private static final char THREE = '3';
+    private static final char FOUR = '4';
+    private static final char FIVE = '5';
+    private static final char SIX = '6';
+    private static final char SEVEN = '7';
+    private static final char EIGHT = '8';
+    private static final char NINE = '9';
 
     public static void main(String[] args) {
         String value = "Привет 8, как 1 2 твои дела? Может4, сделать 3 дело?";
